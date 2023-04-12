@@ -12,7 +12,13 @@ const MyBook: FC = () => {
         <div>
           <PrimButton label="Primary Button" />
           <SecButton label="Secondary Button" />
-          <CardMyBook book_picture="" description="" status="" title="" />
+          <CardMyBook
+            book_picture=""
+            description=""
+            status=""
+            title=""
+            user_name=""
+          />
         </div>
       </Contain>
     </Layout>
