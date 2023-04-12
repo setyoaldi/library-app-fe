@@ -16,7 +16,7 @@ export const CardMyBook: FC<PropsMyBook> = (props) => {
     <div className="flex flex-row gap-4 items-center border-2 border-slate-300 rounded-lg p-2">
       <img
         src={book_picture}
-        className="rounded-lg w-40 h-auto aspect-square mb-3"
+        className="rounded-lg w-24 h-28 aspect-square mb-3"
       />
       <div className="flex flex-col h-full w-full justify-between">
         <div className="h-[60%] overflow-auto">

@@ -36,14 +36,15 @@ const MyBook: FC = () => {
               <PrimButton label="ADD NEW BOOK" />
             </div>
           </div>
-          <div className="w-full h-[80%] overflow-auto border border-slate-300 rounded-2xl">
-            <div className="grid gap-5 grid-cols-2 lg:grid-cols-3 w-full">
+          <div className="w-full h-[80%] overflow-auto border border-slate-300 rounded-2xl p-4">
+            <div className="grid gap-4 grid-cols-1 md:grid-cols-2 xl:grid-cols-3  w-full">
               <CardMyBook
                 book_picture="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSgJHc24cuW_jj0tf6w2bEoaSfbglyVkGBTZmLrczuVLeDFC7fH"
                 description=""
                 status="Available"
                 title=""
               />
+              <CardMyBook book_picture="" description="" status="" title="" />
               <CardMyBook book_picture="" description="" status="" title="" />
               <CardMyBook book_picture="" description="" status="" title="" />
             </div>
