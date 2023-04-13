@@ -44,10 +44,29 @@ const MyBook: FC = () => {
                 description=""
                 status="Available"
                 title=""
+                user_name=""
               />
-              <CardMyBook book_picture="" description="" status="" title="" />
-              <CardMyBook book_picture="" description="" status="" title="" />
-              <CardMyBook book_picture="" description="" status="" title="" />
+              <CardMyBook
+                book_picture=""
+                description=""
+                status=""
+                title=""
+                user_name=""
+              />
+              <CardMyBook
+                book_picture=""
+                description=""
+                status=""
+                title=""
+                user_name=""
+              />
+              <CardMyBook
+                book_picture=""
+                description=""
+                status=""
+                title=""
+                user_name=""
+              />
             </div>
           </div>
         </div>

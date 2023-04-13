@@ -4,9 +4,11 @@ import { PrimButton } from "../components/Button";
 import { Contain } from "../components/Container";
 import hero1 from "../assets/hero1.jpg";
 import { BsArrowRight } from "react-icons/bs";
+import { Link, useNavigate } from "react-router-dom";
 
 const LandingPage: FC = () => {
   const responsive = screen.width;
+  const navigate = useNavigate();
   return (
     <Layout>
       <section className="w-full md:h-96 lg:h-[80vh] py-4 px-20 grid grid-cols-1 md:grid-cols-2 text-center text-[#19345E]">
@@ -20,7 +22,12 @@ const LandingPage: FC = () => {
           <p className="font-semibold lg:text-xl 2xl:text-3xl text-left">
             Read-Learn-Loop
           </p>
-          <button className="item-center justify-between bg-[#19345E] text-slate-200 font-semibold px-9 pb-1 border border-white hover:bg-[#1A3BC3] active:bg-[#2c4fdd] w-40 h-10">
+          <button
+            className="item-center justify-between bg-[#19345E] text-slate-200 font-semibold px-9 pb-1 border border-white hover:bg-[#1A3BC3] active:bg-[#2c4fdd] w-40 h-10"
+            onClick={() => {
+              navigate("/books");
+            }}
+          >
             <span className="flex items-center gap-2">
               Explore
               <BsArrowRight role="presentation" />
