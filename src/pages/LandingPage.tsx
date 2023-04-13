@@ -20,8 +20,11 @@ const LandingPage: FC = () => {
           <p className="font-semibold lg:text-xl 2xl:text-3xl text-left">
             Read-Learn-Loop
           </p>
-          <button className="item-center justify-between bg-[#19345E] text-slate-200 font-semibold px-4 pb-1 border border-white hover:bg-[#1A3BC3] active:bg-[#2c4fdd] disabled:bg-[#3f4958] w-40 h-10">
-            Explore
+          <button className="item-center justify-between bg-[#19345E] text-slate-200 font-semibold px-9 pb-1 border border-white hover:bg-[#1A3BC3] active:bg-[#2c4fdd] w-40 h-10">
+            <span className="flex items-center gap-2">
+              Explore
+              <BsArrowRight role="presentation" />
+            </span>
           </button>
         </div>
         {responsive > 767 ? (
