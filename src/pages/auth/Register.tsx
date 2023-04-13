@@ -15,7 +15,7 @@ interface objSubmitType {
   address: string;
 }
 
-const Login: FC = () => {
+const Register: FC = () => {
   const [objSubmit, setObjSubmit] = useState<objSubmitType>({
     name: "",
     username: "",
@@ -113,4 +113,4 @@ const Login: FC = () => {
   );
 };
 
-export default Login;
+export default Register;
