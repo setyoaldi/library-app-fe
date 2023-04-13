@@ -9,6 +9,13 @@ interface PropsMyBook {
   user_name: string;
 }
 
+interface PropsHistory {
+  title: string;
+  start_date?: string;
+  end_date: string;
+  history?: boolean;
+}
+
 export const CardMyBook: FC<PropsMyBook> = (props) => {
   const { book_picture, title, description, status, user_name } = props;
   const isAvailable = status === "Available" ? true : false;
@@ -33,6 +40,34 @@ export const CardMyBook: FC<PropsMyBook> = (props) => {
             {status}
           </p>
           <PrimButton label="Edit Book" />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export const CardHistory: FC<PropsHistory> = (props) => {
+  const { title, end_date, start_date, history } = props;
+
+  return (
+    <div className="flex flex-row gap-4 items-center border-2 border-slate-300 rounded-lg p-3 ">
+      <div className="flex h-full w-full justify-between">
+        <p>Book title:{title}</p>
+
+        <div className="flex justify-between items-center">
+          {history ? (
+            <p
+              className={`text-green-500 w-full text-center font-semibold tracking-wide`}
+            >
+              with in due date: {end_date}
+            </p>
+          ) : (
+            <p
+              className={`text-red-500 w-full text-center font-semibold tracking-wide`}
+            >
+              from: {start_date} to: {end_date}
+            </p>
+          )}
         </div>
       </div>
     </div>
