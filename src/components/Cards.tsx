@@ -6,10 +6,11 @@ interface PropsMyBook {
   title: string;
   description: string;
   status: string;
+  user_name: string;
 }
 
 export const CardMyBook: FC<PropsMyBook> = (props) => {
-  const { book_picture, title, description, status } = props;
+  const { book_picture, title, description, status, user_name } = props;
   const isAvailable = status === "Available" ? true : false;
 
   return (

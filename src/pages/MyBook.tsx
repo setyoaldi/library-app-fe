@@ -9,6 +9,7 @@ interface mybookType {
   title: string;
   description: string;
   status: string;
+  user_name: string;
 }
 
 const MyBook: FC = () => {
