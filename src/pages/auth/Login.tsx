@@ -1,15 +1,17 @@
-import { FC, useState, useEffect } from "react";
+import { FC, useState, useEffect, FormEvent } from "react";
 import loginImage from "/login.png";
 import Layout from "../../components/Layout";
 import { Contain } from "../../components/Container";
 import { InputMyBook } from "../../components/Inputs";
 import { PrimButton } from "../../components/Button";
+import axios from "axios";
 import { Link } from "react-router-dom";
 
 interface objSubmitType {
   username: string;
   password: string;
 }
+
 const Login: FC = () => {
   const [objSubmit, setObjSubmit] = useState<objSubmitType>({
     username: "",
@@ -22,12 +24,31 @@ const Login: FC = () => {
     setIsDisabled(!isEmpty);
   }, [objSubmit]);
 
+  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setIsDisabled(true);
+    axios
+      .post("http://54.169.5.251:8080/login", objSubmit)
+      .then((response) => {
+        const { data, message } = response.data;
+        console.log(response);
+      })
+      .catch((error) => {
+        const { data } = error.response;
+        console.log(data);
+      })
+      .finally(() => setIsDisabled(false));
+  }
+
   return (
     <Layout>
-      <div className="flex w-full h-full  p-20 justify-center">
+      <div className="flex w-full h-full p-20 justify-center">
         <div className="w-[32%]  flex justify-end items-center">
           <Contain>
-            <form className="w-full p-8">
+            <form
+              className="w-full p-8"
+              onSubmit={(event) => handleSubmit(event)}
+            >
               <p className="text-lg tracking-wide mb-5">Welcome !</p>
               <p className="text-2xl tracking-wider font-semibold mb-1">
                 Login
