@@ -1,18 +1,26 @@
 import { FaChevronDown } from "react-icons/fa";
 import React, { Component } from "react";
 import { PrimButton } from "./Button";
+import { Link, useNavigate } from "react-router-dom";
 const Navbar = () => {
+  const navigate = useNavigate();
   return (
     <div className="navbar bg-base-100 px-20">
       <div className="flex-1">
-        <a className="bg-base-100 normal-case font-bold text-base text-[#19345E]">
+        <a
+          className="bg-base-100 normal-case font-bold text-base text-[#19345E]"
+          onClick={() => navigate("/")}
+        >
           E - Perpus
         </a>
       </div>
       <div className="flex-none">
         <ul className="menu menu-horizontal px-1">
           <li>
-            <a className="bg-base-100 normal-case font-bold text-base text-[#19345E]">
+            <a
+              className="bg-base-100 normal-case font-bold text-base text-[#19345E]"
+              onClick={() => navigate("/books")}
+            >
               Home
             </a>
           </li>
@@ -53,7 +61,10 @@ const Navbar = () => {
             </ul>
           </li>
           <li>
-            <PrimButton label="Login" />
+            <PrimButton
+              label="Login"
+              onClick={() => navigate("/login")}
+            ></PrimButton>
           </li>
         </ul>
       </div>

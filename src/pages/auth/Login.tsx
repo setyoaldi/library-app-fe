@@ -5,7 +5,7 @@ import { Contain } from "../../components/Container";
 import { InputMyBook } from "../../components/Inputs";
 import { PrimButton } from "../../components/Button";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 interface objSubmitType {
   username: string;
@@ -13,6 +13,7 @@ interface objSubmitType {
 }
 
 const Login: FC = () => {
+  const navigate = useNavigate();
   const [objSubmit, setObjSubmit] = useState<objSubmitType>({
     username: "",
     password: "",
@@ -79,7 +80,11 @@ const Login: FC = () => {
               />
               <p className="text-slate-900 text-xs mt-8 text-center">
                 Don't have an Account ?{" "}
-                <a className="font-semibold" id="nav-register" href="#">
+                <a
+                  className="font-semibold"
+                  id="nav-register"
+                  onClick={() => navigate("/register")}
+                >
                   Register
                 </a>
               </p>
